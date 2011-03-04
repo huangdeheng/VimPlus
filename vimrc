@@ -76,10 +76,10 @@
 	" Font settings
 	if has("win32")
     	set guifont=Monaco:h11:cANSI
-    	set guifontwide=Yahei_Mono:h11:cGB2312
+    	set guifontwide=YaHei_Consolas_Hybrid:h11:cGB2312
 	elseif has("unix")
-		set guifont=Monaco\ 12
-		set guifontwide=WenQuanYi\ Micro\ Hei\ 12
+		set guifont=Monaco\ 14
+		set guifontwide=WenQuanYi\ Micro\ Hei\ 14
 	endif
 	
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,6 +162,10 @@
 	nmap gt :MBEbn<cr>
 	nmap gT :MBEbp<cr>
 	
+	imap <A-h> <left>
+	imap <A-j> <down>
+	imap <A-k> <up>
+	imap <A-l> <right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Matchit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,8 +182,6 @@
     "map <A-i> i <ESC>r " alt-i (normal mode) inserts a single char, and then switches back to normal
     "map <F2> <ESC>ggVG:call SuperRetab()<left>
     "map <F12> ggVGg? " encypt the file (toggle)
-	map <C-s> <ESC>:w<cr>
-	" 将Ctrl+s映射为保存文件
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Autocommands
@@ -203,4 +205,15 @@
 	" Omni Completion
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	set completeopt=longest,menu
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " DoxygenToolkit plugin setting 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	map fg :Dox<cr>
+	let g:DoxygenToolkit_authorName="Troy Huang"
+	let g:DoxygenToolkit_briefTag_pre="@brief\t"
+	let g:DoxygenToolkit_paramTag_pre="@param\t"
+	let g:DoxygenToolkit_returnTag="@return\t"
+	let g:DoxygenToolkit_briefTag_funName = "no"
+
 
