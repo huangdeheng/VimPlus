@@ -76,10 +76,10 @@
 	" Font settings
 	if has("win32")
     	set guifont=Monaco:h11:cANSI
-    	set guifontwide=YaHei_Consolas_Hybrid:h11:cGB2312
+    	set guifontwide=Yahei_Mono:h11:cGB2312
 	elseif has("unix")
-		set guifont=Monaco\ 14
-		set guifontwide=WenQuanYi\ Micro\ Hei\ 14
+		set guifont=Monaco\ 12
+		set guifontwide=WenQuanYi\ Micro\ Hei\ 12
 	endif
 	
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,10 +162,6 @@
 	nmap gt :MBEbn<cr>
 	nmap gT :MBEbp<cr>
 	
-	imap <A-h> <left>
-	imap <A-j> <down>
-	imap <A-k> <up>
-	imap <A-l> <right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Matchit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,7 +178,15 @@
     "map <A-i> i <ESC>r " alt-i (normal mode) inserts a single char, and then switches back to normal
     "map <F2> <ESC>ggVG:call SuperRetab()<left>
     "map <F12> ggVGg? " encypt the file (toggle)
+	
+	" 重映射保存快捷方式为熟悉的Ctrl+s
+	map <C-s> <ESC>:w<cr>
+	inoremap <C-s> <ESC>:w<cr><insert>
 
+	" 重映射插入状态下光标的导航键
+	imap <A-j> <down>
+	imap <A-k> <up>
+	imap <A-l> <right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Autocommands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -215,5 +219,4 @@
 	let g:DoxygenToolkit_paramTag_pre="@param\t"
 	let g:DoxygenToolkit_returnTag="@return\t"
 	let g:DoxygenToolkit_briefTag_funName = "no"
-
 
